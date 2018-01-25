@@ -7,6 +7,12 @@ public class MiListener extends gramaticaBaseListener{
 		pila.push(Integer.parseInt(ctx.getText()));
 	}
 	@Override public void exitExpr(gramaticaParser.ExprContext ctx) { 
+		if(ctx.oper != null && ctx.oper.getType() == gramaticaParser.SUMA) {
+			System.out.println("si");
+		}
+		else {
+			System.out.println("no");
+		}
 		if(ctx.children.size() ==3) {
 			System.out.print(ctx.children.get(1));
 			int b = pila.pop();

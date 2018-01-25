@@ -1,7 +1,7 @@
 grammar gramatica;
 
 prog: expr NEWLINE;
-expr: expr ('+'| '-') term
+expr: expr oper=('+'| '-') term
     | term
     ;
 term: '0'
@@ -14,5 +14,6 @@ term: '0'
     | '7'
     | '8'
     | '9'
-    ;
+    ; 
+SUMA : '+';
 NEWLINE : [\r\n]+ ;
